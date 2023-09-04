@@ -11,5 +11,5 @@ def solution(s):
                 count += 1
         else:
             count = 0
-            answer += ' '
+            answer += i
     return answer
