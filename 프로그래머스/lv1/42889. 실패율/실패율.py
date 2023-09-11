@@ -10,9 +10,6 @@ def solution(N, stages):
             answer[i] = rate
         else:
             answer[i] = 0
-    answer = sorted(answer.items(),key=lambda x:x[1],reverse=True)
-    for i in range(N):
-        ans.append(answer[i][0])
+    answer = sorted(answer,key=lambda x:answer[x],reverse=True)
         
-        
-    return ans
+    return answer
