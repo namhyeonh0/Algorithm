@@ -9,7 +9,7 @@ def solution(queue1, queue2):
     ave = s / 2
     count = 0
     q3 = q1 + q2
-    count_limit = len(q1) * 3 - 3
+    count_limit = len(q1) * 3 - 2
     
     if s % 2 != 0:
         return -1
