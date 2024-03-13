@@ -2,9 +2,9 @@
 def ML(list1, list2):
     while len(list1) != 0:
         ss = list1[0]
+        a = list1.count(ss)
+        b = list2.count(ss)
         if ss in list2:
-            a = list1.count(ss)
-            b = list2.count(ss)
             if a-b <= 0:
                 for i in range(a):
                     list1.remove(ss)
@@ -14,8 +14,9 @@ def ML(list1, list2):
                 for i in range(a):
                     list1.remove(ss)
         else:
-            list2.append(list1[0])
-            list1.remove(list1[0])  
+            for i in range(a):
+                list2.append(ss)
+                list1.remove(ss)  
     return list2
 
 #교집합 만드는 함수
@@ -39,7 +40,6 @@ def SL(list1,list2):
             list1.remove(list1[0])
     return minList
             
-
 def solution(str1, str2):
     answer = 0
     
@@ -63,5 +63,3 @@ def solution(str1, str2):
         answer = int((len(minList)/len(maxList))*65536)
     
     return answer
-
-print(solution('abab','baba'))
