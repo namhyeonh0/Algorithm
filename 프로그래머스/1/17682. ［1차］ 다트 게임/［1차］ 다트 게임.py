@@ -1,6 +1,13 @@
 def solution(dartResult):
-    import re
-    score = re.findall(r'\d+',dartResult)
+    
+    score = []
+    for i in range(len(dartResult)-1):
+        if dartResult[i].isdigit() and dartResult[i+1].isdigit():
+            score.append(dartResult[i:i+2])
+        elif dartResult[i-1].isdigit() and dartResult[i].isdigit():
+            continue
+        elif dartResult[i].isdigit():
+            score.append(dartResult[i])
 
     count = 0
     for i in dartResult:
