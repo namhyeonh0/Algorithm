@@ -19,9 +19,9 @@ def nnn(a,n):
     if a == 0:
         answer += "0"
     else:
-    
         while a:
-            q,r = divmod(a,n)
+            q = a // n
+            r = a % n
             if r >= 10:
                 answer += r10[r]
             else:
@@ -29,4 +29,3 @@ def nnn(a,n):
             a = q
     
     return answer[::-1]
-        
