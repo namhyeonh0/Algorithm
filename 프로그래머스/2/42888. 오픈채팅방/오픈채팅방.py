@@ -24,11 +24,9 @@ def solution(record):
             userID_index[stringList[1]].append(idx)
             idx += 1
         else:
-            name = stringList[2]
             for i in userID_index[stringList[1]]:
                 preName2 = answer[i][:answer[i].find("님")]
-                answer[i] = answer[i].replace(preName2,name)
-            userID_name[stringList[1]] = name
+                answer[i] = answer[i].replace(preName2,stringList[2])
+            userID_name[stringList[1]] = stringList[2]
                 
-        
     return answer
