@@ -3,10 +3,8 @@ scores = [0]
 for _ in range(n):
     scores.append(int(input()))
 
-if n == 1:
-    print(scores[1])
-elif n == 2:
-    print(scores[1] + scores[2])
+if n <= 2:
+    print(sum(scores))
 else:
     dp = [0] * (n+1)
     dp[1] = scores[1]
