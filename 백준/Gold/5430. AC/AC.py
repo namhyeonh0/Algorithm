@@ -6,11 +6,11 @@ for _ in range(t):
     func = input()
     n = int(input())
     nums = input()
-    nn = nums[1:len(nums)-1]
+    nums = nums[1:len(nums)-1]
     if n != 0:
-        nnn = deque(nn.split(','))
+        nums = deque(nums.split(','))
     else:
-        nnn = []
+        nums = []
     rev = False
     err = False
     
@@ -18,18 +18,18 @@ for _ in range(t):
         if f == 'R':
             rev = True if rev == False else False
         elif f == 'D':
-            if nnn:
+            if nums:
                 if rev == True:
-                    nnn.pop()
+                    nums.pop()
                 else:
-                    nnn.popleft()
+                    nums.popleft()
             else:
                 print('error')
                 err = True
                 break
-    nnn = list(nnn)
+    nums = list(nums)
     
     if rev == True and err == False:
-        print('[' + ','.join(nnn[::-1]) + ']')
+        print('[' + ','.join(nums[::-1]) + ']')
     elif rev == False and err == False:
-        print('[' + ','.join(nnn) + ']')
+        print('[' + ','.join(nums) + ']')
