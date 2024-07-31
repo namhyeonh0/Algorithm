@@ -1,20 +1,18 @@
 class Solution {
     public int solution(int n, int m, int[] section) {
-        int answer = 0;
         
-        int len = section.length;
-        boolean[] check = new boolean[len];
+        int answer = 1;
+        int startIndex = section[0];
+        int endIndex = startIndex + m - 1;
         
-        for (int i = 0; i < len; i++) {
-            if (check[i] == false) {
-                int endIndex = section[i] + m - 1;
+        for (int i = 0; i < section.length; i++) {
+            if (section[i] > endIndex) {
                 answer++;
-                for (int j = i; j < len; j++) {
-                    if (section[j] <= endIndex) check[j] = true;
-                    else break;
-                }
+                startIndex = section[i];
+                endIndex = startIndex + m - 1;
             }
         }
+            
         return answer;
     }
 }
