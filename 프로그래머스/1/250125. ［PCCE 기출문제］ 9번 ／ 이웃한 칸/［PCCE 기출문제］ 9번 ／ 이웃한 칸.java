@@ -1,7 +1,6 @@
 class Solution {
     public int solution(String[][] board, int h, int w) {
         int count = 0;
-        String color = board[h][w];
         
         int n = board.length;
         int[] dh = {1, -1, 0, 0};
@@ -12,7 +11,7 @@ class Solution {
             int w_check = w + dw[i];
             if (h_check < 0 || h_check >= n) continue;
             if (w_check < 0 || w_check >= n) continue;
-            if (board[h_check][w_check].equals(color)) count++;
+            if (board[h_check][w_check].equals(board[h][w])) count++;
         }
         
         return count;
