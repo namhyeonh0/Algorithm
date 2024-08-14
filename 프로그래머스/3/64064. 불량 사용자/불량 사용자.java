@@ -7,7 +7,7 @@ class Solution {
     public int solution(String[] user_id, String[] banned_id) {
         result = new ArrayList<>();
         String[] users = new String[banned_id.length];
-
+        
         ArrayList<ArrayList<String>> readyToBan = new ArrayList<ArrayList<String>>();
         for (int i = 0; i < banned_id.length; i++) {
             String ban = banned_id[i];
