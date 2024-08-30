@@ -5,7 +5,7 @@ class Solution {
         long person = 0l;
         while (min != max) {
             long mid = (min + max) / 2;
-            person = binarySearch(mid, n, times);
+            person = minute(mid, n, times);
             if (person < n) {
                 min = (min + max) / 2 + 1;
             } else {
@@ -16,7 +16,7 @@ class Solution {
         return min;
     }
     
-    static long binarySearch(Long mid, int n, int[] times) {
+    static long minute(Long mid, int n, int[] times) {
         long person = 0l;
         for (int time : times) {
             person += mid / time;
