@@ -1,5 +1,3 @@
-import java.util.*;
-
 class Solution {
     static boolean[] visited;
     static int answer = 0;
