@@ -22,9 +22,9 @@ class Solution {
         Iterator<Integer> iterator = formation.iterator();
         while (iterator.hasNext()) {
             int formationNum = iterator.next();
-            int realNum1 = (num1 / 10) * formationNum + (num1 % 10);
-            int realNum2 = (num2 / 10) * formationNum + (num2 % 10);
-            int realNum3 = (num3 / 100) * formationNum * formationNum + ((num3 % 100) / 10) * formationNum + (num3 % 10);
+            int realNum1 = Integer.parseInt(Integer.toString(num1), formationNum);
+            int realNum2 = Integer.parseInt(Integer.toString(num2), formationNum);
+            int realNum3 = Integer.parseInt(Integer.toString(num3), formationNum);
             switch (operator) {
                 case "+" -> {
                     if (realNum1 + realNum2 != realNum3) {
@@ -80,8 +80,8 @@ class Solution {
             num3 = -1;
             operator = includeXExpression[1];
             for (int formation : formationList) {
-                int realNum1 = (num1 / 10) * formation + (num1 % 10);
-                int realNum2 = (num2 / 10) * formation + (num2 % 10);
+                int realNum1 = Integer.parseInt(Integer.toString(num1), formation);
+                int realNum2 = Integer.parseInt(Integer.toString(num2), formation);
                 if (num3 == -1) {
                     switch (operator) {
                         case "+" -> {
